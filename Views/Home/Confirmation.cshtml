@@ -1,0 +1,29 @@
+﻿@{
+    //Logan Hardy
+    //Assignment 4
+    //02 / 10 / 2021
+
+    //This project is to display my list of top 5 favorite restraunts, allow a user to suggest more restaurants, and display the list of user suggested restaurants.
+
+
+    ViewBag.Title = "Restaurant Confirmation";
+}
+
+@model LoganHardy413Assignment4.Models.AddRestaurant
+
+<div class="text-center">
+    <h1 class="display-4">@ViewBag.Title</h1>
+    <br />
+    <br />
+    <h2>@Model.RestaurantName has been added</h2>
+    <br />
+</div>
+
+
+<!--Link to view all of the suggested restaurants -->
+<div>
+    Click <a asp-action="MyRestaurants">Here</a> to view your suggested restaurants!
+</div>
+<br />
+<br />
+

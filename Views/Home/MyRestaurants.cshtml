@@ -1,0 +1,59 @@
+﻿@*
+    Logan Hardy 
+    Assignment 4
+    02/10/2021
+
+    This project is to display my list of top 5 favorite restraunts, allow a user to suggest more restaurants, and display the list of user suggested restaurants.  
+*@
+@{
+    ViewBag.Title = "My Suggested Restaurants";
+}
+
+<!--Bring in the model AddRestaurants, which is what is used to contain the user recommended restaurant information-->
+@model IEnumerable<LoganHardy413Assignment4.Models.AddRestaurant>
+
+<div class="text-center">
+    <h1 class="display-4">@ViewBag.Title</h1>
+</div>
+<br />
+<br />
+
+<table class="table table-bordered table-striped"><!--Bootstrap class to format the table, add borders, and gray stripes every other line-->
+    <thead>
+        <tr>
+            <!--Table Header/coulmn names-->
+            <th>Name</th>
+            <th>Restaurant Name</th>
+            <th>Favorite Dish</th>
+            <th>Phone Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--display each user entered restaurant into a row in the table-->
+        @foreach (LoganHardy413Assignment4.Models.AddRestaurant restaurant in Model)
+        {
+            <!--If Restaurant.FavoriteDish is null, display "It's all Tasty!"-->
+            if (@restaurant.FavoriteDish == null)
+            {
+                <tr>
+                    <td>@restaurant.UserName</td>
+                    <td>@restaurant.RestaurantName</td>
+                    <td>It's all tasty!</td>
+                    <td>@restaurant.PhoneNumber</td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td>@restaurant.UserName</td>
+                    <td>@restaurant.RestaurantName</td>
+                    <td>@restaurant.FavoriteDish</td>
+                    <td>@restaurant.PhoneNumber</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<br />
+<br />

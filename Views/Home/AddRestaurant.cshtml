@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Add Restaurant";
+}
+@model LoganHardy413Assignment4.Models.AddRestaurant
+
+<div class="text-center">
+    <h1 class="display-4">@ViewBag.Title</h1>
+</div>
+<br />
+<br />
+
+<!--Form for user to add one of their favorite restaurants to my suggested list-->
+<form asp-action="AddRestaurant" method="post">
+    <div>
+        <label asp-for="UserName">Your Name: </label>
+        <input asp-for="UserName" />
+        <br />
+        <label asp-for="RestaurantName">Restaurant Name: </label>
+        <input asp-for="RestaurantName" />
+        <br />
+        <label asp-for="FavoriteDish">Favorite Dish: </label>
+        <input asp-for="FavoriteDish" />
+        <br />
+        <label asp-for="PhoneNumber">Restaurant Phone: </label>
+        <input asp-for="PhoneNumber" />
+        <br />
+        <br />
+        <br />
+        <button type="submit" class=".btn-success">Add Restaurant</button>
+        <br />
+        <div asp-validation-summary="All"></div>
+    </div>
+</form>

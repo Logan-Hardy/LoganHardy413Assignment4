@@ -1,0 +1,43 @@
+﻿@{
+    //Logan Hardy
+    //Assignment 4
+    //02 / 10 / 2021
+
+    //This project is to display my list of top 5 favorite restraunts, allow a user to suggest more restaurants, and display the list of user suggested restaurants.
+
+
+    ViewData["Title"] = "Logan's Eats";
+}
+@model IEnumerable<string>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to @ViewBag.Title</h1>
+    <br />
+</div>
+<img class="card-img-top" src="~/beachRest.jpg" />
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<!--About Logan's Eats-->
+<h3>About Logan's Eats</h3>
+<p>Logan's Eats was created to keep track of my top 5 favorite restaurants for others to see and have them suggest new places for me to try!</p>
+<p>Feel free to join in and include your favorite places, so I can add to my places to eat.</p>
+
+<br />
+<br />
+
+<h3>My Top 5 Favorite Restaurnts</h3>
+
+<ul>
+    <!--display each of the 5 hard coded restaurants that are my 5 favorites-->
+    @foreach (string restaurant in Model)
+    {
+        <!--the .Raw() function provides functionality to the html tags included in the string passed from the controller-->
+        <li>@Html.Raw(restaurant)</li>
+    }
+</ul>
+<br />
+<br />
